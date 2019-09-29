@@ -16,13 +16,20 @@ public class MyLockTest {
                     Thread.sleep(10);
                     ZookeeperLock.lock("test");
                         inc();
-                    ZookeeperLock.unlock();
                 } catch (KeeperException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (Exception e) {
                     e.printStackTrace();
+                }finally {
+                    try {
+                        ZookeeperLock.unlock();
+                    } catch (KeeperException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }).start();
         }
