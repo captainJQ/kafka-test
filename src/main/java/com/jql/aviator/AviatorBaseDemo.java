@@ -8,6 +8,7 @@ import com.googlecode.aviator.runtime.type.AviatorDouble;
 import com.googlecode.aviator.runtime.type.AviatorObject;
 import com.googlecode.aviator.runtime.type.AviatorString;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -96,6 +97,12 @@ public class AviatorBaseDemo {
         public String getName() {
             return "like";
         }
+    }
+
+    @Test
+    public void testStringUtils(){
+        boolean contains = StringUtils.contains("code=='m=AAAAAAA|d=Y'", "||");
+        System.out.println(contains);
     }
 
 }
