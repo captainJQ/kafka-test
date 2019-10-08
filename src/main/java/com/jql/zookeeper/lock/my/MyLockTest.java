@@ -13,9 +13,12 @@ public class MyLockTest {
         for (int i = 0; i < 100; i++) {
             new Thread(()->{
                 try {
-                    Thread.sleep(10);
-                    ZookeeperLock.lock("test");
+//                    Thread.sleep(10);
+                    ZookeeperLock.setLockName("test");
+                    ZookeeperLock.lock();
+                    for (int j = 0; j < 10; j++) {
                         inc();
+                    }
                 } catch (KeeperException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
@@ -62,5 +65,20 @@ public class MyLockTest {
         Integer c = Integer.valueOf(s);
         c++;
         zkClient.setData("/test/count",c.toString().getBytes(),-1);
+    }
+
+
+    @Test
+    public void test3()throws Exception{
+        ZookeeperLock.setLockName("liyan");
+        ZookeeperLock.lock();
+        ZookeeperLock.lock();
+        ZookeeperLock.lock();
+        ZookeeperLock.lock();
+
+        ZookeeperLock.unlock();
+        ZookeeperLock.unlock();
+        ZookeeperLock.unlock();
+
     }
 }

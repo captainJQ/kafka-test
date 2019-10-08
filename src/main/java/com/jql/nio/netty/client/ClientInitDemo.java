@@ -18,6 +18,6 @@ public class ClientInitDemo extends ChannelInitializer<SocketChannel> {
         pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, byteBuf));
         pipeline.addLast("decoder", new StringDecoder());
         pipeline.addLast("encoder", new StringEncoder());
-        pipeline.addLast("handler", new ClentHandlerDemo());
+        pipeline.addLast("handler", new ClientHandlerDemo());
     }
 }

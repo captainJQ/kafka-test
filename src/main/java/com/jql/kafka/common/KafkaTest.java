@@ -17,16 +17,6 @@ public class KafkaTest {
     }
 
     @Test
-    public void test(){
-        Scanner type = new Scanner(System.in);
-        String message = null;
-        while (!"#q".equals(message = type.nextLine())) {
-            KafkaProductor.send("buy",message);
-        }
-        type.close();
-    }
-
-    @Test
     public void test2() throws InterruptedException {
         new Thread(new BuyKafkaConsumer()).start();
         Thread.sleep(100000);
