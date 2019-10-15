@@ -22,4 +22,10 @@ public class KafkaTest {
         Thread.sleep(100000);
     }
 
+
+    @Test
+    public void test11222(){
+        int index = "com.smy.pcs.service.CusProtocolChannelService".indexOf(".service");
+        System.out.println(index);
+    }
 }

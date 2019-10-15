@@ -93,7 +93,11 @@ public class ZookeeperTest {
     public void getStat() throws KeeperException, InterruptedException {
         //使用 exists函数时，如果节点不存在将返回一个nul值
         System.out.println("6.查看节点是否被删除:");
-        System.out.println("节点状态:[" + zk.exists("/test", false) + "]");
+        System.out.println("节点状态:[" + zk.exists("/test/liyan", false) + "]");
     }
 
+    @Test
+    public void test11111(){
+        System.out.println(37015799/1024.0/1024.0);
+    }
 }
