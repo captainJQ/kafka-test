@@ -89,6 +89,13 @@
             <version>1.2.55</version>
         </dependency>
 
+        <!-- jredis -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
